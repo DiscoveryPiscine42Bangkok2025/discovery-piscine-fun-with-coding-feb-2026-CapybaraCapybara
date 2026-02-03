@@ -9,4 +9,4 @@ else
         echo "$arg"
         ((count++))
     done
-fi
+fiu
