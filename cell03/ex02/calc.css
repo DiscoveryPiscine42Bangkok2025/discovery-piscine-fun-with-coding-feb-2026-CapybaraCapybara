@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+input, select {
+    margin: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Change</title>
+    <link rel="stylesheet" href="background.css">
+</head>
+
+<body>
+    <button id="button">Click Me</button>
+</body>
+<script>
+    let colors = ["white", "lightblue", "lightcoral"];
+    let index = 0;
+
+    document.body.style.backgroundColor = colors[index];
+
+    document.getElementById("button").onclick = function () {
+        index = (index + 1) % colors.length;
+        document.body.style.backgroundColor = colors[index];
+    };
+</script>
+
+</html>

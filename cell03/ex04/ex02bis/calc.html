@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <input type="text" id="left">
+
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+
+    <input type="text" id="right">
+
+    <input type="submit" value="Try me!" id="submit">
+</body>
+
+<script>
+    $(document).ready(function () {
+
+        function isPositiveInteger(value) {
+            return /^\d+$/.test(value);
+        }
+
+        $("#submit").click(function () {
+            const left = $("#left").val();
+            const right = $("#right").val();
+            const operator = $("#operator").val();
+
+            if (!isPositiveInteger(left) || !isPositiveInteger(right)) {
+                alert("Error :(");
+                return;
+            }
+
+            const a = parseInt(left);
+            const b = parseInt(right);
+            let result;
+
+            if ((operator === "/" || operator === "%") && b === 0) {
+                alert("It’s over 9000!");
+                console.log("It’s over 9000!");
+                return;
+            }
+
+            if (operator === "+") result = a + b;
+            else if (operator === "-") result = a - b;
+            else if (operator === "*") result = a * b;
+            else if (operator === "/") result = a / b;
+            else if (operator === "%") result = a % b;
+
+            alert(result);
+            console.log(result);
+        });
+
+        setInterval(function () {
+            alert("Please, use me...");
+        }, 30000);
+
+    });
+</script>
+
+</html>
